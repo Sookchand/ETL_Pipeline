@@ -68,7 +68,7 @@ Error Handling: Implement error handling in your DAG to gracefully handle failur
 8. Krish Naic
 ## Demo
 
-Insert gif or link to demo
+![apod_data4](https://github.com/user-attachments/assets/8e398cc5-a5a0-4f20-8cb6-e91cef7398d8)
 
 
 ## Tech Stack
@@ -132,5 +132,9 @@ Logs are your friend: Detailed logging is crucial for debugging.
 
 
 ## Deployment
+![apod_data2](https://github.com/user-attachments/assets/9bb2bef5-e770-4acf-968d-b4a3bb8129fb)
+![apod_data1](https://github.com/user-attachments/assets/dc06029c-6545-47c0-827f-35d6d79ba71e)
+![apod_data](https://github.com/user-attachments/assets/b350549d-4b9a-493b-9627-feb8b3826019)
+
 
 
