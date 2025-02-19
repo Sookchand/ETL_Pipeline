@@ -1,41 +1,136 @@
-### Project Overview: Airflow ETL Pipeline with Postgres and API Integration
-This project involves creating an ETL (Extract, Transform, Load) pipeline using Apache Airflow. The pipeline extracts data from an external API (in this case, NASA's Astronomy Picture of the Day (APOD) API), transforms the data, and loads it into a Postgres database. The entire workflow is orchestrated by Airflow, a platform that allows scheduling, monitoring, and managing workflows.
 
-The project leverages Docker to run Airflow and Postgres as services, ensuring an isolated and reproducible environment. We also utilize Airflow hooks and operators to handle the ETL process efficiently.
+# Project Title
 
-Key Components of the Project:
-Airflow for Orchestration:
+Project Overview: Airflow ETL Pipeline with Postgres and API Integration
 
-Airflow is used to define, schedule, and monitor the entire ETL pipeline. It manages task dependencies, ensuring that the process runs sequentially and reliably.
-The Airflow DAG (Directed Acyclic Graph) defines the workflow, which includes tasks like data extraction, transformation, and loading.
-Postgres Database:
 
-A PostgreSQL database is used to store the extracted and transformed data.
-Postgres is hosted in a Docker container, making it easy to manage and ensuring data persistence through Docker volumes.
-We interact with Postgres using Airflow’s PostgresHook and PostgresOperator.
-NASA API (Astronomy Picture of the Day):
+## Authors
 
-The external API used in this project is NASA’s APOD API, which provides data about the astronomy picture of the day, including metadata like the title, explanation, and the URL of the image.
-We use Airflow’s SimpleHttpOperator to extract data from the API.
-Objectives of the Project:
-Extract Data:
+- [@sookchand](https://www.github.com/octokatherine)
 
-The pipeline extracts astronomy-related data from NASA’s APOD API on a scheduled basis (daily, in this case).
-Transform Data:
 
-Transformations such as filtering or processing the API response are performed to ensure that the data is in a suitable format before being inserted into the database.
-Load Data into Postgres:
+## Acknowledgements
+1. Apache Airflow:
 
-The transformed data is loaded into a Postgres database. The data can be used for further analysis, reporting, or visualization.
-Architecture and Workflow:
-The ETL pipeline is orchestrated in Airflow using a DAG (Directed Acyclic Graph). The pipeline consists of the following stages:
+Purpose: Orchestration of your data pipeline (DAG).
+Documentation:
+Apache Airflow Official Documentation
+This is the primary resource for all things Airflow. It covers installation, configuration, DAG writing, operators, hooks, and more.
+2. Apache Airflow Providers (Specific to your DAG):
 
-1. Extract (E):
-The SimpleHttpOperator is used to make HTTP GET requests to NASA’s APOD API.
-The response is in JSON format, containing fields like the title of the picture, the explanation, and the URL to the image.
-2. Transform (T):
-The extracted JSON data is processed in the transform task using Airflow’s TaskFlow API (with the @task decorator).
-This stage involves extracting relevant fields like title, explanation, url, and date and ensuring they are in the correct format for the database.
-3. Load (L):
-The transformed data is loaded into a Postgres table using PostgresHook.
-If the target table doesn’t exist in the Postgres database, it is created automatically as part of the DAG using a create table task.
+airflow.providers.http:
+Purpose: Provides the SimpleHttpOperator for making HTTP requests (to the NASA API).
+Documentation:
+Apache Airflow Providers HTTP
+airflow.providers.postgres:
+Purpose: Provides the PostgresHook for interacting with PostgreSQL databases.
+Documentation:
+Apache Airflow Providers Postgres
+3. Python:
+
+Purpose: The programming language used to define your DAG.
+Documentation:
+Python Official Documentation
+Python is the foundation of Airflow DAGs. Familiarize yourself with Python syntax, data structures, and best practices.
+4. PostgreSQL:
+
+Purpose: The database where you're storing the NASA APOD data.
+Documentation:
+PostgreSQL Official Documentation
+If you need to understand PostgreSQL SQL syntax, data types, or database administration, this is the definitive resource.
+5. JSON (JavaScript Object Notation):
+
+Purpose: Used for data exchange between the NASA API and your DAG.
+Documentation:
+JSON.org
+While not a formal "documentation" in the same sense as the others, JSON.org provides a clear and concise explanation of the JSON format.
+Python has a built in Json library.
+Python json library
+6. Docker (Implicitly through Astro CLI):
+
+Purpose: Containerization of your Airflow environment.
+Documentation:
+Docker Documentation
+While you might not directly interact with Docker in the same way when using Astro CLI, understanding Docker concepts can be helpful for troubleshooting.
+7. Astronomer Astro CLI:
+
+Purpose: Tool for local Airflow development and deployment on the Astronomer platform.
+Documentation:
+Astronomer Documentation
+This documentation will help with the proper use of the astro cli commands.
+Key Concepts and Recommendations:
+
+Airflow Operators and Hooks: Spend time understanding the different Airflow operators (like SimpleHttpOperator) and hooks (like PostgresHook). These are the building blocks of your DAGs.
+Airflow Connections: Properly configuring connections is crucial for your DAG to interact with external systems.
+DAG Development Best Practices: Follow Airflow best practices for writing maintainable and scalable DAGs.
+Error Handling: Implement error handling in your DAG to gracefully handle failures.
+
+8. Krish Naic
+## Demo
+
+Insert gif or link to demo
+
+
+## Tech Stack
+
+Core Technologies:
+
+Airflow: airflow.apache.org
+Python: python.org
+PostgreSQL: postgresql.org
+JSON: json.org
+Docker: docker.com
+Astro CLI: docs.astronomer.io
+Airflow Components:
+
+HTTP Provider: airflow.apache.org
+Postgres Provider: airflow.apache.org
+
+
+## Documentation
+
+Core Technologies:
+
+Apache Airflow:
+Website: https://airflow.apache.org/
+Documentation: https://airflow.apache.org/docs/apache-airflow/stable/index.html
+Python:
+Website: https://www.python.org/
+Documentation: https://docs.python.org/3/
+PostgreSQL:
+Website: https://www.postgresql.org/
+Documentation: https://www.postgresql.org/docs/
+JSON (JavaScript Object Notation):
+Website: https://www.json.org/json-en.html
+Python Json library: https://docs.python.org/3/library/json.html
+Docker:
+Website: https://www.docker.com/
+Documentation: https://docs.docker.com/
+Astronomer Astro CLI:
+Documentation: https://docs.astronomer.io/astro/cli/overview
+Specific Airflow Components:
+
+airflow.providers.http.operators.http.SimpleHttpOperator:
+Documentation: https://airflow.apache.org/docs/apache-airflow-providers-http/stable/index.html
+airflow.providers.postgres.hooks.postgres.PostgresHook
+
+:
+Documentation: https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html
+
+
+## Lessons Learned
+
+Tech: Airflow, Python, PostgreSQL, JSON, Docker, Astro CLI.
+
+Learned:
+
+Orchestration is key: Airflow simplifies complex data pipelines.
+Connections matter: Correct database and API connections are vital.
+Providers are powerful: Airflow's providers streamline interactions.
+Docker is essential: Containerization ensures consistent environments.
+Logs are your friend: Detailed logging is crucial for debugging.
+
+
+## Deployment
+
+
