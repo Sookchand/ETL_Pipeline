@@ -69,6 +69,13 @@ Error Handling: Implement error handling in your DAG to gracefully handle failur
 ## Demo
 
 ![apod_data4](https://github.com/user-attachments/assets/8e398cc5-a5a0-4f20-8cb6-e91cef7398d8)
+![apod_data2](https://github.com/user-attachments/assets/9bb2bef5-e770-4acf-968d-b4a3bb8129fb)
+![apod_data1](https://github.com/user-attachments/assets/dc06029c-6545-47c0-827f-35d6d79ba71e)
+![apod_data](https://github.com/user-attachments/assets/b350549d-4b9a-493b-9627-feb8b3826019)
+
+## Deployment
+
+![apod_data5](https://github.com/user-attachments/assets/bb24b90d-9e3b-4d2f-ac02-0d63060f8f76)
 
 
 ## Tech Stack
@@ -131,10 +138,6 @@ Docker is essential: Containerization ensures consistent environments.
 Logs are your friend: Detailed logging is crucial for debugging.
 
 
-## Deployment
-![apod_data2](https://github.com/user-attachments/assets/9bb2bef5-e770-4acf-968d-b4a3bb8129fb)
-![apod_data1](https://github.com/user-attachments/assets/dc06029c-6545-47c0-827f-35d6d79ba71e)
-![apod_data](https://github.com/user-attachments/assets/b350549d-4b9a-493b-9627-feb8b3826019)
 
 
 
